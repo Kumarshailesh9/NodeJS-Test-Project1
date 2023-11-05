@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>General Store Seller Dashboard</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Welcome to the Seller Dashboard</h1>
+
+        <form action="process_data.php" method="post" onsubmit="addProduct(event)">
+            <h2 class="mt-4">Add Product</h2>
+            <div class="form-group">
+                <label for="product_name">Product Name:</label>
+                <input type="text" class="form-control" id="name" name="product_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="product_description">Product Description:</label>
+                <textarea class="form-control" id="description" name="product_description" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="product_price">Price:</label>
+                <input type="number" class="form-control" id="price" name="product_price" required>
+            </div>
+
+            <div class="form-group">
+                <label for="product_quantity">Quantity:</label>
+                <input type="number" class="form-control" id="quantity" name="product_quantity" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Product</button>
+        </form>
+
+        <h2 class="mt-4">Current Products</h2>
+        <ul id="items"></ul>
+        <!-- Display the list of current products from the database here -->
+
+       <!-- <h2 class="mt-4">Order History</h2> -->
+        <!-- Display the order history of the seller's products here -->
+    </div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
